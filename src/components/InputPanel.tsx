@@ -69,8 +69,8 @@ const InputField = React.memo(({ label, field, min, max, step, suffix = "", inpu
             onMouseDown={() => startRepeating(-step)}
             onMouseUp={stopRepeating}
             onMouseLeave={stopRepeating}
-            onTouchStart={() => startRepeating(-step)}
-            onTouchEnd={stopRepeating}
+            onTouchStart={(e) => { e.preventDefault(); startRepeating(-step); }}
+            onTouchEnd={(e) => { e.preventDefault(); stopRepeating(); }}
             className="p-1 px-2 bg-muted rounded hover:bg-primary/20 hover:text-primary transition-colors text-xs font-bold cursor-pointer select-none active:scale-95"
           >
             <Minus className="w-3 h-3" />
@@ -88,8 +88,8 @@ const InputField = React.memo(({ label, field, min, max, step, suffix = "", inpu
             onMouseDown={() => startRepeating(step)}
             onMouseUp={stopRepeating}
             onMouseLeave={stopRepeating}
-            onTouchStart={() => startRepeating(step)}
-            onTouchEnd={stopRepeating}
+            onTouchStart={(e) => { e.preventDefault(); startRepeating(step); }}
+            onTouchEnd={(e) => { e.preventDefault(); stopRepeating(); }}
             className="p-1 px-2 bg-muted rounded hover:bg-primary/20 hover:text-primary transition-colors text-xs font-bold cursor-pointer select-none active:scale-95"
           >
             <Plus className="w-3 h-3" />
