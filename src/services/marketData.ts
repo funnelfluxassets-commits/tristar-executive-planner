@@ -22,7 +22,8 @@ export const fetchLiveGoldPrice = async (): Promise<number | null> => {
 
   try {
     // Fallback Source: Gold-API (Public endpoint)
-    const response = await fetch('https://api.gold-api.com/api/XAU/USD');
+    // Updated endpoint based on latest documentation
+    const response = await fetch('https://api.gold-api.com/price/XAU');
     if (response.ok) {
       const data = await response.json();
       if (data.price) {
