@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tristar-executive-planner.funnelfluxassets.com/sitemap.xml
